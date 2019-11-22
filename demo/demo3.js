@@ -18,10 +18,16 @@ import Login from './screen/Login';
 import Drawer1 from './screen/Drawer1';
 import Drawer2 from './screen/Drawer2';
 
-const HomeStack = createStackNavigator({
+const Tabs = createBottomTabNavigator({
   Home: Home,
-  HomeDetail: HomeDetail,
-});
+  News: News,
+  Mine: Mine,
+})
+
+// const HomeStack = createStackNavigator({
+//   Home: Home,
+//   HomeDetail: HomeDetail,
+// });
 // const DrawerNavigator = createDrawerNavigator({
 //   HomeStack: HomeStack,
 //   Drawer1: Drawer1,
@@ -30,17 +36,18 @@ const HomeStack = createStackNavigator({
 //   News: News,
 //   DrawerNavigator: DrawerNavigator,
 // });
-const MineStack = createStackNavigator({
-  Mine: Mine,
+// const MineStack = createStackNavigator({
+//   Mine: Mine,
+//   MineDetail: MineDetail,
+// });
+const App = createStackNavigator({
+  Tabs: Tabs,
+  HomeDetail: HomeDetail,
   MineDetail: MineDetail,
 });
-// const App = createStackNavigator({
-//   Tabs: Tabs,
-//   News: News,
-// });
 // const App2 = createSwitchNavigator({
 //   Login: Login,
 //   Tabs: Tabs,
 // });
 
-export default createAppContainer(Tabs);
+export default createAppContainer(App);

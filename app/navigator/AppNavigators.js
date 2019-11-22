@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { createReactNavigationReduxMiddleware, createReduxContainer } from 'react-navigation-redux-helpers';
 
 import WelcomePage from '../page/WelcomePage';
-import Tab from '../page/HomePage';
+import HomePage from '../page/HomePage';
 import NewsDetail from '../page/news/NewsDetail';
 import VideoDetail from '../page/video/VideoDetail';
 import DocumentDetail from '../page/document/DocumentDetail';
@@ -22,8 +22,8 @@ const InitNavigator = createStackNavigator({
     }
 });
 const MainNavigator = createStackNavigator({
-    Tab: {
-        screen: Tab,
+    HomePage: {
+        screen: HomePage,
         navigationOptions: {
             header: null,// 可以通过将header设为null 来禁用StackNavigator的Navigation Bar
         }

@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { Text } from 'react-native';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 
 import NavigationUtil from "../navigator/NavigationUtil";
 // import SplashScreen from 'react-native-splash-screen'
@@ -10,15 +10,15 @@ import NavigationUtil from "../navigator/NavigationUtil";
 class WelcomePage extends Component {
     componentDidMount() {
         // this.props.onThemeInit();
-        this.timer = setTimeout(() => {
-            // SplashScreen.hide();
-            console.log('yesx')
-            console.log(this.props)
-            NavigationUtil.resetToHomPage({
-                navigation: this.props.navigation
-            })
-            // this.props.navigation.navigate("Main");
-        }, 300);
+        // this.timer = setTimeout(() => {
+        // SplashScreen.hide();
+        console.log('yesx')
+        console.log(this.props)
+        NavigationUtil.resetToHomPage({
+            navigation: this.props.navigation
+        })
+        // this.props.navigation.navigate("Main");
+        // }, 300);
     }
 
     componentWillUnmount() {

@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { createAppContainer } from "react-navigation";
 import { createBottomTabNavigator } from 'react-navigation-tabs';
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import Entypo from 'react-native-vector-icons/Entypo';
-import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import { View, Text, Button } from 'react-native';
 
 // import Tabs from '../navigator/TabNavigator';
 
@@ -26,18 +24,13 @@ export default class HomePage extends Component {
           navigationOptions: {
             tabBarLabel: "新闻",
             tabBarIcon: ({ tintColor, focused }) => (
-              <MaterialIcons
-                name={'whatshot'}
-                size={26}
-                style={{ color: tintColor }}
-              />
-              // <Text style={{
-              //   fontFamily: "iconfont",
-              //   fontSize: 24,
-              //   color: tintColor
-              // }}>
-              //   &#xe61f;
-              // </Text>
+              <Text style={{
+                fontFamily: "iconfont",
+                fontSize: 24,
+                color: tintColor
+              }}>
+                &#xe7ef;
+              </Text>
             ),
           }
         },
@@ -46,11 +39,13 @@ export default class HomePage extends Component {
           navigationOptions: {
             tabBarLabel: "视频",
             tabBarIcon: ({ tintColor, focused }) => (
-              <Entypo
-                name={'folder-video'}
-                size={26}
-                style={{ color: tintColor }}
-              />
+              <Text style={{
+                fontFamily: "iconfont",
+                fontSize: 24,
+                color: tintColor
+              }}>
+                &#xe7ee;
+              </Text>
             ),
           }
         },
@@ -59,11 +54,13 @@ export default class HomePage extends Component {
           navigationOptions: {
             tabBarLabel: "文献",
             tabBarIcon: ({ tintColor, focused }) => (
-              <Entypo
-                name={'book'}
-                size={26}
-                style={{ color: tintColor }}
-              />
+              <Text style={{
+                fontFamily: "iconfont",
+                fontSize: 24,
+                color: tintColor
+              }}>
+                &#xe7f1;
+              </Text>
             ),
           }
         },
@@ -72,11 +69,13 @@ export default class HomePage extends Component {
           navigationOptions: {
             tabBarLabel: "我的",
             tabBarIcon: ({ tintColor, focused }) => (
-              <FontAwesome
-                name={'user'}
-                size={26}
-                style={{ color: tintColor }}
-              />
+              <Text style={{
+                fontFamily: "iconfont",
+                fontSize: 24,
+                color: tintColor
+              }}>
+                &#xe7f0;
+              </Text>
             ),
           }
         }

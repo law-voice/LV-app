@@ -8,6 +8,14 @@ export default class Mine extends Component {
   changePage() {
     this.props.navigation.push('MineDetail')
   };
+  // toNextPage() {
+    // this.props.navigation.setParams({ homeName: '新首页' })
+    // this.props.navigation.push('Mine', {
+    //   itemId: 86,
+    //   otherParam: 'anything you want here',
+    //   homeName: '首页'
+    // })
+  // };
   render() {
     const { navigation } = this.props;
     console.log(this.props)

@@ -5,6 +5,11 @@ export default class Home extends Component {
   static navigationOptions = {
     title: '我的详情页',
   };
+  // static navigationOptions = ({ navigation }) => {
+  //   return {
+  //     title: navigation.getParam('otherParam', 'A Nested Details Screen'),
+  //   };
+  // };
   render() {
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>

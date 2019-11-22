@@ -71,7 +71,12 @@ const Tabs = createBottomTabNavigator({
   },
 });
 const App = createStackNavigator({
-  Tabs: Tabs,
+  Tabs: {
+    screen: Tabs,
+    // navigationOptions: {
+    //   header: null,// 可以通过将header设为null 来禁用StackNavigator的Navigation Bar
+    // }
+  },
   HomeDetail: HomeDetail,
   MineDetail: MineDetail
 });

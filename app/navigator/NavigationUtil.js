@@ -9,6 +9,7 @@ export default class NavigationUtil {
      **/
     static goPage(page, params) {
         const navigation = NavigationUtil.navigation;
+        console.log(navigation)
         // const { navigation } = params;
         if (!navigation) {
             console.log('NavigationUtil.navigation can not be null')
@@ -27,6 +28,7 @@ export default class NavigationUtil {
      * @param navigation
      */
     static goBack(navigation) {
+        console.log(navigation)
         navigation.goBack();
     }
 
