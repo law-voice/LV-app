@@ -1,5 +1,5 @@
 {
-  "name": "appSecond",
+  "name": "lv-app",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -7,7 +7,8 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "fix": "eslint --fix ."
   },
   "dependencies": {
     "react": "16.9.0",
@@ -32,12 +33,31 @@
     "@babel/runtime": "^7.6.3",
     "@react-native-community/eslint-config": "^0.0.5",
     "babel-jest": "^24.9.0",
+    "chalk": "^3.0.0",
     "eslint": "^6.6.0",
+    "husky": "^3.1.0",
     "jest": "^24.9.0",
+    "lint-staged": "^9.4.3",
     "metro-react-native-babel-preset": "^0.57.0",
     "react-test-renderer": "16.9.0"
   },
   "jest": {
     "preset": "react-native"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "node ./scripts/commitmsg.validate.js -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "eslint --fix",
+      "git add"
+    ],
+    "**/*.{md,json}": [
+      "prettier --write",
+      "git add"
+    ]
   }
 }

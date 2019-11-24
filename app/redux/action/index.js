@@ -1,5 +1,5 @@
-import {onNews} from './news'
+import {onNews} from './news';
 
 export default {
-  onNews
-}
+  onNews,
+};

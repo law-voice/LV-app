@@ -1,10 +1,10 @@
 import React from 'react';
-import { View, Text } from 'react-native';
-import { createAppContainer } from 'react-navigation';
-import { createBottomTabNavigator } from "react-navigation-tabs";
-import { createSwitchNavigator } from 'react-navigation-switch-transitioner';
-import { createStackNavigator } from "react-navigation-stack";
-import { createDrawerNavigator } from "react-navigation-drawer";
+import {View, Text} from 'react-native';
+import {createAppContainer} from 'react-navigation';
+import {createBottomTabNavigator} from 'react-navigation-tabs';
+import {createSwitchNavigator} from 'react-navigation-switch-transitioner';
+import {createStackNavigator} from 'react-navigation-stack';
+import {createDrawerNavigator} from 'react-navigation-drawer';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
@@ -34,42 +34,44 @@ import Drawer2 from './screen/Drawer2';
 //   Mine: Mine,
 //   MineDetail: MineDetail,
 // });
-const Tabs = createBottomTabNavigator({
-  Home: {
-    screen: Home,
-    navigationOptions: {
-      tabBarLabel: '首页',
-      tabBarIcon: ({ tintColor, focused }) => (
-        // <Ionicons name={'md-home'} size={30} color={tintColor} />
-        // <Icon.Button name='wpforms' size={30} color={tintColor} />
-        <MaterialCommunityIcons name='face' size={30} color={tintColor} />
-      )
-    }
-  },
-  Mine,
-}, {
-  defaultNavigationOptions: ({ navigation }) => ({
-    tabBarIcon: ({ focused, horizontal, tintColor }) => {
-      const { routeName } = navigation.state;
-      let IconComponent = Ionicons;
-      let iconName;
-      if (routeName === 'Home') {
-        iconName = `ios-information-circle${focused ? '' : '-outline'}`;
-        // Sometimes we want to add badges to some icons.
-        // You can check the implementation below.
-        IconComponent = HomeIconWithBadge;
-      } else if (routeName === 'Settings') {
-        iconName = `ios-options`;
-      }
-      // You can return any component that you like here!
-      return <IconComponent name={iconName} size={25} color={tintColor} />;
+const Tabs = createBottomTabNavigator(
+  {
+    Home: {
+      screen: Home,
+      navigationOptions: {
+        tabBarLabel: '首页',
+        tabBarIcon: ({tintColor, focused}) => (
+          // <Ionicons name={'md-home'} size={30} color={tintColor} />
+          // <Icon.Button name='wpforms' size={30} color={tintColor} />
+          <MaterialCommunityIcons name="face" size={30} color={tintColor} />
+        ),
+      },
     },
-  }),
-  tabBarOptions: {
-    activeTintColor: 'tomato',
-    inactiveTintColor: 'gray',
+    Mine,
   },
-});
+  {
+    defaultNavigationOptions: ({navigation}) => ({
+      tabBarIcon: ({focused, horizontal, tintColor}) => {
+        const {routeName} = navigation.state;
+        let IconComponent = Ionicons;
+        let iconName;
+        if (routeName === 'Home') {
+          iconName = `ios-information-circle${focused ? '' : '-outline'}`;
+          // Sometimes we want to add badges to some icons.
+          // You can check the implementation below.
+        } else if (routeName === 'Settings') {
+          iconName = 'ios-options';
+        }
+        // You can return any component that you like here!
+        return <IconComponent name={iconName} size={25} color={tintColor} />;
+      },
+    }),
+    tabBarOptions: {
+      activeTintColor: 'tomato',
+      inactiveTintColor: 'gray',
+    },
+  },
+);
 const App = createStackNavigator({
   Tabs: {
     screen: Tabs,
@@ -78,7 +80,7 @@ const App = createStackNavigator({
     // }
   },
   HomeDetail: HomeDetail,
-  MineDetail: MineDetail
+  MineDetail: MineDetail,
 });
 // const App2 = createSwitchNavigator({
 //   Login: Login,

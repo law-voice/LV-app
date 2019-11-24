@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { View, Text, Button } from 'react-native';
+import React, {Component} from 'react';
+import {View, Text, Button} from 'react-native';
 
 export default class Home extends Component {
   static navigationOptions = {
@@ -12,7 +12,7 @@ export default class Home extends Component {
   // };
   render() {
     return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
         <Text>Home Detail</Text>
         <Button
           title="Go back"
@@ -25,4 +25,4 @@ export default class Home extends Component {
       </View>
     );
   }
-};
+}

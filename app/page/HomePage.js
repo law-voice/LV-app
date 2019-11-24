@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import { createAppContainer } from "react-navigation";
-import { createBottomTabNavigator } from 'react-navigation-tabs';
-import { View, Text, Button } from 'react-native';
+import React, {Component} from 'react';
+import {createAppContainer} from 'react-navigation';
+import {createBottomTabNavigator} from 'react-navigation-tabs';
+import {View, Text, Button} from 'react-native';
 
 // import Tabs from '../navigator/TabNavigator';
 
@@ -17,76 +17,77 @@ export default class HomePage extends Component {
     // this.backPress = new BackPressComponent({backPress: this.onBackPress});
   }
   _tabNavigator() {
-    return (
-      createBottomTabNavigator({       //在这里配置页面的路由
-        NewsPage: {
-          screen: NewsPage,
-          navigationOptions: {
-            tabBarLabel: "新闻",
-            tabBarIcon: ({ tintColor, focused }) => (
-              <Text style={{
-                fontFamily: "iconfont",
+    return createBottomTabNavigator({
+      //在这里配置页面的路由
+      NewsPage: {
+        screen: NewsPage,
+        navigationOptions: {
+          tabBarLabel: '新闻',
+          tabBarIcon: ({tintColor, focused}) => (
+            <Text
+              style={{
+                fontFamily: 'iconfont',
                 fontSize: 24,
-                color: tintColor
+                color: tintColor,
               }}>
-                &#xe7ef;
-              </Text>
-            ),
-          }
+              &#xe7ef;
+            </Text>
+          ),
         },
-        VideoPage: {
-          screen: VideoPage,
-          navigationOptions: {
-            tabBarLabel: "视频",
-            tabBarIcon: ({ tintColor, focused }) => (
-              <Text style={{
-                fontFamily: "iconfont",
+      },
+      VideoPage: {
+        screen: VideoPage,
+        navigationOptions: {
+          tabBarLabel: '视频',
+          tabBarIcon: ({tintColor, focused}) => (
+            <Text
+              style={{
+                fontFamily: 'iconfont',
                 fontSize: 24,
-                color: tintColor
+                color: tintColor,
               }}>
-                &#xe7ee;
-              </Text>
-            ),
-          }
+              &#xe7ee;
+            </Text>
+          ),
         },
-        DocumentPage: {
-          screen: DocumentPage,
-          navigationOptions: {
-            tabBarLabel: "文献",
-            tabBarIcon: ({ tintColor, focused }) => (
-              <Text style={{
-                fontFamily: "iconfont",
+      },
+      DocumentPage: {
+        screen: DocumentPage,
+        navigationOptions: {
+          tabBarLabel: '文献',
+          tabBarIcon: ({tintColor, focused}) => (
+            <Text
+              style={{
+                fontFamily: 'iconfont',
                 fontSize: 24,
-                color: tintColor
+                color: tintColor,
               }}>
-                &#xe7f1;
-              </Text>
-            ),
-          }
+              &#xe7f1;
+            </Text>
+          ),
         },
-        MinePage: {
-          screen: MinePage,
-          navigationOptions: {
-            tabBarLabel: "我的",
-            tabBarIcon: ({ tintColor, focused }) => (
-              <Text style={{
-                fontFamily: "iconfont",
+      },
+      MinePage: {
+        screen: MinePage,
+        navigationOptions: {
+          tabBarLabel: '我的',
+          tabBarIcon: ({tintColor, focused}) => (
+            <Text
+              style={{
+                fontFamily: 'iconfont',
                 fontSize: 24,
-                color: tintColor
+                color: tintColor,
               }}>
-                &#xe7f0;
-              </Text>
-            ),
-          }
-        }
-      })
-    )
+              &#xe7f0;
+            </Text>
+          ),
+        },
+      },
+    });
   }
   render() {
     NavigationUtil.navigation = this.props.navigation;
     const Tab = createAppContainer(this._tabNavigator());
-    return (
-      <Tab />
-    )
+    return <Tab />;
   }
 }

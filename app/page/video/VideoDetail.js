@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { View, Text, Button } from 'react-native';
+import React, {Component} from 'react';
+import {View, Text, Button} from 'react-native';
 
 export default class VideoDetail extends Component {
   static navigationOptions = {
@@ -17,10 +17,10 @@ export default class VideoDetail extends Component {
     //   otherParam: 'anything you want here',
     //   homeName: '新首页'
     // })
-  };
+  }
   render() {
     return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
         <Text>VideoDetail</Text>
         {/* <Button
           title="Go to MinePage"
@@ -29,4 +29,4 @@ export default class VideoDetail extends Component {
       </View>
     );
   }
-};
+}

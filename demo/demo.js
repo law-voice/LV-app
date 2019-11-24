@@ -1,17 +1,17 @@
 import React from 'react';
-import { Image, Button, StyleSheet } from 'react-native';
-import {createAppContainer} from "react-navigation";
-import {createStackNavigator} from "react-navigation-stack";
-import {createDrawerNavigator} from "react-navigation-drawer";
+import {Image, Button, StyleSheet} from 'react-native';
+import {createAppContainer} from 'react-navigation';
+import {createStackNavigator} from 'react-navigation-stack';
+import {createDrawerNavigator} from 'react-navigation-drawer';
 import Home from './screen/Home';
 
 class MyHomeScreen extends React.Component {
   static navigationOptions = {
     drawerLabel: 'Home',
-    drawerIcon: ({ tintColor }) => (
+    drawerIcon: ({tintColor}) => (
       <Image
         source={require('./assets/wechat_circle.png')}
-        style={[styles.icon, { tintColor: tintColor }]}
+        style={[styles.icon, {tintColor: tintColor}]}
       />
     ),
   };
@@ -29,10 +29,10 @@ class MyHomeScreen extends React.Component {
 class MyNotificationsScreen extends React.Component {
   static navigationOptions = {
     drawerLabel: 'Notifications',
-    drawerIcon: ({ tintColor }) => (
+    drawerIcon: ({tintColor}) => (
       <Image
         source={require('./assets/wechat_friend.png')}
-        style={[styles.icon, { tintColor: tintColor }]}
+        style={[styles.icon, {tintColor: tintColor}]}
       />
     ),
   };
@@ -57,8 +57,8 @@ const MyDrawerNavigator = createDrawerNavigator({
 });
 const HomeNavigator = createStackNavigator({
   myDrawer: MyDrawerNavigator,
-  Home: Home
-})
+  Home: Home,
+});
 
 const MyApp = createAppContainer(HomeNavigator);
 

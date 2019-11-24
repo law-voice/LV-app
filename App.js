@@ -24,10 +24,13 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-const App: () => React$Node = () => {
+const App = () => {
   return (
     <>
-      <Text style={{height: 50, textAlign: 'center', fontSize: 26, color: '#f00'}}>second App啊</Text>
+      <Text
+        style={{height: 50, textAlign: 'center', fontSize: 26, color: '#f00'}}>
+        second App啊
+      </Text>
       <StatusBar barStyle="dark-content" />
       <SafeAreaView>
         <ScrollView

@@ -1,5 +1,5 @@
-import Types from '../types'
+import Types from '../types';
 
 export function onNews() {
-  console.log('onNews!!!')
+  console.log('onNews!!!');
 }

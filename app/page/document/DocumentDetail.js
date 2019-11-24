@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { View, Text, Button } from 'react-native';
+import React, {Component} from 'react';
+import {View, Text, Button} from 'react-native';
 
 export default class DocumentDetail extends Component {
   static navigationOptions = {
@@ -7,9 +7,9 @@ export default class DocumentDetail extends Component {
   };
   render() {
     return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
         <Text>DocumentDetail</Text>
       </View>
     );
   }
-};
+}

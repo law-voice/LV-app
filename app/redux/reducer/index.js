@@ -1,10 +1,12 @@
-import { combineReducers } from 'redux'
-import news from './news'
+import {combineReducers} from 'redux';
+import news from './news';
 
-import { rootCom, RootNavigator } from '../../navigator/AppNavigators';
+import {rootCom, RootNavigator} from '../../navigator/AppNavigators';
 
 //1.指定默认state
-const navState = RootNavigator.router.getStateForAction(RootNavigator.router.getActionForPathAndParams(rootCom));
+const navState = RootNavigator.router.getStateForAction(
+  RootNavigator.router.getActionForPathAndParams(rootCom),
+);
 
 /**
  * 2.创建自己的 navigation reducer，

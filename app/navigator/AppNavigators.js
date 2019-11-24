@@ -1,8 +1,11 @@
-import { createAppContainer, createSwitchNavigator } from "react-navigation";
-import { createStackNavigator } from 'react-navigation-stack';
+import {createAppContainer, createSwitchNavigator} from 'react-navigation';
+import {createStackNavigator} from 'react-navigation-stack';
 // import {createSwitchNavigator} from 'react-navigation-switch-transitioner';
-import { connect } from 'react-redux';
-import { createReactNavigationReduxMiddleware, createReduxContainer } from 'react-navigation-redux-helpers';
+import {connect} from 'react-redux';
+import {
+  createReactNavigationReduxMiddleware,
+  createReduxContainer,
+} from 'react-navigation-redux-helpers';
 
 import WelcomePage from '../page/WelcomePage';
 import HomePage from '../page/HomePage';
@@ -11,54 +14,60 @@ import VideoDetail from '../page/video/VideoDetail';
 import DocumentDetail from '../page/document/DocumentDetail';
 // import MineDetail from '../page/mine/MineDetail';
 
-export const rootCom = 'Main';//设置根路由
+export const rootCom = 'Main'; //设置根路由
 
 const InitNavigator = createStackNavigator({
-    WelcomePage: {
-        screen: WelcomePage,
-        navigationOptions: {
-            header: null,// 可以通过将header设为null 来禁用StackNavigator的Navigation Bar
-        }
-    }
+  WelcomePage: {
+    screen: WelcomePage,
+    navigationOptions: {
+      header: null, // 可以通过将header设为null 来禁用StackNavigator的Navigation Bar
+    },
+  },
 });
-const MainNavigator = createStackNavigator({
+const MainNavigator = createStackNavigator(
+  {
     HomePage: {
-        screen: HomePage,
-        navigationOptions: {
-            header: null,// 可以通过将header设为null 来禁用StackNavigator的Navigation Bar
-        }
+      screen: HomePage,
+      navigationOptions: {
+        header: null, // 可以通过将header设为null 来禁用StackNavigator的Navigation Bar
+      },
     },
     NewsDetail: {
-        screen: NewsDetail,
-        navigationOptions: ({ navigation }) => ({
-            title: '新闻详情',
-        }),
+      screen: NewsDetail,
+      navigationOptions: ({navigation}) => ({
+        title: '新闻详情',
+      }),
     },
     VideoDetail: {
-        screen: VideoDetail,
-        navigationOptions: ({ navigation }) => ({
-            title: '视频',
-        }),
+      screen: VideoDetail,
+      navigationOptions: ({navigation}) => ({
+        title: '视频',
+      }),
     },
     DocumentDetail: {
-        screen: DocumentDetail,
-        navigationOptions: ({ navigation }) => ({
-            title: '文献',
-        }),
-    }
-}, {
+      screen: DocumentDetail,
+      navigationOptions: ({navigation}) => ({
+        title: '文献',
+      }),
+    },
+  },
+  {
     defaultNavigationOptions: {
-        // header: null,// 可以通过将header设为null 来禁用StackNavigator的Navigation Bar
-    }
-});
-const SwitchNavigator = createSwitchNavigator({
+      // header: null,// 可以通过将header设为null 来禁用StackNavigator的Navigation Bar
+    },
+  },
+);
+const SwitchNavigator = createSwitchNavigator(
+  {
     Init: InitNavigator,
     Main: MainNavigator,
-}, {
+  },
+  {
     navigationOptions: {
-        header: null,// 可以通过将header设为null 来禁用StackNavigator的Navigation Bar
-    }
-})
+      header: null, // 可以通过将header设为null 来禁用StackNavigator的Navigation Bar
+    },
+  },
+);
 // export default SwitchNavigator
 
 export const RootNavigator = createAppContainer(SwitchNavigator);
@@ -71,8 +80,8 @@ export const RootNavigator = createAppContainer(SwitchNavigator);
  * @type {Middleware}
  */
 export const middleware = createReactNavigationReduxMiddleware(
-    state => state.nav,
-    'root'
+  state => state.nav,
+  'root',
 );
 
 /**
@@ -87,7 +96,7 @@ const AppWithNavigationState = createReduxContainer(RootNavigator, 'root');
  * @param state
  */
 const mapStateToProps = state => ({
-    state: state.nav,//v2
+  state: state.nav, //v2
 });
 /**
  * 3.连接 React 组件与 Redux store

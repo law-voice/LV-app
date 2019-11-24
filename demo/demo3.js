@@ -1,10 +1,10 @@
 import React from 'react';
-import { View, Text } from 'react-native';
-import { createAppContainer } from 'react-navigation';
-import { createBottomTabNavigator } from "react-navigation-tabs";
-import { createSwitchNavigator } from 'react-navigation-switch-transitioner';
-import { createStackNavigator } from "react-navigation-stack";
-import { createDrawerNavigator } from "react-navigation-drawer";
+import {View, Text} from 'react-native';
+import {createAppContainer} from 'react-navigation';
+import {createBottomTabNavigator} from 'react-navigation-tabs';
+import {createSwitchNavigator} from 'react-navigation-switch-transitioner';
+import {createStackNavigator} from 'react-navigation-stack';
+import {createDrawerNavigator} from 'react-navigation-drawer';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 // import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
@@ -22,7 +22,7 @@ const Tabs = createBottomTabNavigator({
   Home: Home,
   News: News,
   Mine: Mine,
-})
+});
 
 // const HomeStack = createStackNavigator({
 //   Home: Home,

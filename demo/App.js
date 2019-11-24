@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import React, {Component} from 'react';
+import {View, Text} from 'react-native';
 
-import { createAppContainer } from 'react-navigation';
-import { createStackNavigator } from 'react-navigation-stack';
-import { createSwitchNavigator } from 'react-navigation-switch-transitioner';
-import { createBottomTabNavigator } from 'react-navigation-tabs';
+import {createAppContainer} from 'react-navigation';
+import {createStackNavigator} from 'react-navigation-stack';
+import {createSwitchNavigator} from 'react-navigation-switch-transitioner';
+import {createBottomTabNavigator} from 'react-navigation-tabs';
 
 import Home from './screen/Home';
 import News from './screen/News';
@@ -25,17 +25,16 @@ const RouteConfigs = {
   Mine: {
     screen: Mine,
   },
-}
+};
 
 const StackNavigatorConfig = {
   initialRouteName: 'Home',
-  mode: 'card'
-}
+  mode: 'card',
+};
 
 // stack 路由
 // const AppNavigator = createStackNavigator(RouteConfigs, StackNavigatorConfig);
 // const AppContainer = createAppContainer(AppNavigator);
-
 
 // tab 路由
 const TabNavigator = createBottomTabNavigator({
@@ -49,8 +48,8 @@ const LoginNavigator = createStackNavigator({
 });
 const SwitchNavigator = createSwitchNavigator({
   Tabs: TabNavigator,
-  Login: LoginNavigator
-})
+  Login: LoginNavigator,
+});
 const AppContainer = createAppContainer(SwitchNavigator, {
   initialRouteName: 'Login',
 });
@@ -60,5 +59,3 @@ export default class App extends Component {
     return <AppContainer />;
   }
 }
-
-
