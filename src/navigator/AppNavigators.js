@@ -10,7 +10,7 @@ import {
 import WelcomePage from '../page/WelcomePage';
 import HomePage from '../page/HomePage';
 import NewsDetail from '../page/news/NewsDetail';
-import VideoDetail from '../page/video/VideoDetail';
+import LessonDetail from '../page/lesson/LessonDetail';
 import DocumentDetail from '../page/document/DocumentDetail';
 // import MineDetail from '../page/mine/MineDetail';
 
@@ -38,8 +38,8 @@ const MainNavigator = createStackNavigator(
         title: '新闻详情',
       }),
     },
-    VideoDetail: {
-      screen: VideoDetail,
+    LessonDetail: {
+      screen: LessonDetail,
       navigationOptions: ({navigation}) => ({
         title: '视频',
       }),

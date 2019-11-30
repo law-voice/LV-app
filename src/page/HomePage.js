@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import {createAppContainer} from 'react-navigation';
 import {createBottomTabNavigator} from 'react-navigation-tabs';
-import {View, Text, Button} from 'react-native';
+import {Text} from 'react-native';
 
 // import Tabs from '../navigator/TabNavigator';
 
-import NewsPage from './news/List';
-import VideoPage from './video/VideoPage';
+import NewsPage from './news/NewsPage';
+import LessonPage from './lesson/lesson';
 import DocumentPage from './document/DocumentPage';
 import MinePage from './mine/MinePage';
 import NavigationUtil from '../navigator/NavigationUtil';
@@ -35,10 +35,10 @@ export default class HomePage extends Component {
           ),
         },
       },
-      VideoPage: {
-        screen: VideoPage,
+      LessonPage: {
+        screen: LessonPage,
         navigationOptions: {
-          tabBarLabel: '视频',
+          tabBarLabel: '课堂',
           tabBarIcon: ({tintColor, focused}) => (
             <Text
               style={{
