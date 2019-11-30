@@ -10,7 +10,8 @@ import {
 import WelcomePage from '../page/WelcomePage';
 import HomePage from '../page/HomePage';
 import NewsDetail from '../page/news/NewsDetail';
-import LessonDetail from '../page/lesson/LessonDetail';
+import VideoDetail from '../page/lesson/VideoDetail';
+import TeacherDetail from '../page/lesson/TeacherDetail';
 import DocumentDetail from '../page/document/DocumentDetail';
 // import MineDetail from '../page/mine/MineDetail';
 
@@ -38,10 +39,16 @@ const MainNavigator = createStackNavigator(
         title: '新闻详情',
       }),
     },
-    LessonDetail: {
-      screen: LessonDetail,
+    VideoDetail: {
+      screen: VideoDetail,
       navigationOptions: ({navigation}) => ({
         title: '视频',
+      }),
+    },
+    TeacherDetail: {
+      screen: TeacherDetail,
+      navigationOptions: ({navigation}) => ({
+        title: '名师',
       }),
     },
     DocumentDetail: {
