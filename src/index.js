@@ -8,12 +8,10 @@ export default class App extends Component {
     /**
      * 将store传递给App框架
      */
-    console.log(this);
     return (
       <Provider store={store}>
         <AppNavigator />
       </Provider>
     );
-    // return <AppNavigator />
   }
 }
