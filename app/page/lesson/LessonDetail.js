@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {View, Text, Button} from 'react-native';
 
-export default class VideoDetail extends Component {
+export default class LessonDetail extends Component {
   static navigationOptions = {
     title: '视频详情',
   };
@@ -21,7 +21,7 @@ export default class VideoDetail extends Component {
   render() {
     return (
       <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-        <Text>VideoDetail</Text>
+        <Text>LessonDetail</Text>
         {/* <Button
           title="Go to MinePage"
           onPress={() => this.toMinePage()}

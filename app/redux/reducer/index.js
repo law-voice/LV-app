@@ -1,5 +1,7 @@
 import {combineReducers} from 'redux';
 import news from './news';
+import lesson from './lesson/lesson';
+import video from './lesson/video';
 
 import {rootCom, RootNavigator} from '../../navigator/AppNavigators';
 
@@ -24,10 +26,8 @@ const navReducer = (state = navState, action) => {
 const index = combineReducers({
   nav: navReducer,
   news: news,
-  // trending: trending,
-  // favorite: favorite,
-  // language: language,
-  // search: search,
+  lesson: lesson,
+  video: video,
 });
 
 export default index;
