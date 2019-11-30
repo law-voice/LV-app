@@ -5,7 +5,7 @@ import {Text} from 'react-native';
 
 // import Tabs from '../navigator/TabNavigator';
 
-import NewsPage from './news/NewsPage';
+import NewsPage from './news/List';
 import LessonPage from './lesson/lesson';
 import DocumentPage from './document/DocumentPage';
 import MinePage from './mine/MinePage';
