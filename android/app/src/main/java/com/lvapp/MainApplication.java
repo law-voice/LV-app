@@ -1,4 +1,4 @@
-package com.appsecond;
+package com.lvapp;
 
 import android.app.Application;
 import android.content.Context;
