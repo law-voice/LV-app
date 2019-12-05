@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {View, TouchableOpacity, Text} from 'react-native';
-import NavigationBar from '../../../common/NavigationBar';
+import NavigationBar from '../../../component/common/NavigationBar';
 import Video from './Video';
 import Teacher from './Teacher';
 import styles from './styles';
@@ -57,7 +57,7 @@ export default class LessonPage extends Component {
   }
   navBar() {
     let statusBar = {
-      backgroundColor: '#249CF2',
+      backgroundColor: '#269CF3',
       barStyle: 'light-content',
     };
     return (

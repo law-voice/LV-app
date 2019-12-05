@@ -5,4 +5,8 @@ export default StyleSheet.create({
     flex: 1,
     backgroundColor: '#f4f5f6',
   },
+  videoContainer: {
+    flex: 1,
+    backgroundColor: '#fff',
+  },
 });

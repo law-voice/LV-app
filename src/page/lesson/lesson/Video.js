@@ -1,13 +1,5 @@
 import React, {Component} from 'react';
-import {
-  View,
-  Text,
-  Button,
-  TouchableOpacity,
-  FlatList,
-  Toast,
-  RefreshControl,
-} from 'react-native';
+import {View, Button, FlatList} from 'react-native';
 import {createAppContainer} from 'react-navigation';
 import {createMaterialTopTabNavigator} from 'react-navigation-tabs';
 import NavigationUtil from '../../../navigator/NavigationUtil';
@@ -18,9 +10,6 @@ export default class Video extends Component {
   constructor(props) {
     super(props);
   }
-  state = {
-    type: 0,
-  };
   render() {
     const TabNavigatorVideo = createAppContainer(
       createMaterialTopTabNavigator(
@@ -28,7 +17,7 @@ export default class Video extends Component {
           VideoTab: {
             screen: VideoTab,
             navigationOptions: {
-              tabBarLabel: 'VideoTab',
+              tabBarLabel: '全部',
               title: 'tab1',
             },
           },
@@ -63,16 +52,27 @@ export default class Video extends Component {
         },
         {
           tabBarOptions: {
+            scrollEnabled: true,
+            pressColor: '#269CF3',
+            pressOpacity: 0.6,
             tabStyle: {
               width: 'auto',
             },
-            scrollEnabled: true,
+            labelStyle: {
+              color: '#333',
+            },
+            style: {
+              backgroundColor: '#fff',
+            },
+            // indicatorStyle: {
+            //   backgroundColor: '#269CF3',
+            // },
           },
         },
       ),
     );
     return (
-      <View style={styles.container}>
+      <View style={styles.videoContainer}>
         <TabNavigatorVideo />
       </View>
     );
@@ -123,6 +123,7 @@ class VideoTab extends Component {
   renderItem = data => {
     return (
       <VideoItem
+        style={{color: '#fff'}}
         item={data.item}
         // onSelect={callback => {
         //   NavigationUtil.goPage('DetailPage', {

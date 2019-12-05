@@ -1,14 +1,20 @@
 import React, {Component} from 'react';
-import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {Image, Text, TouchableOpacity, View} from 'react-native';
 import {PropTypes} from 'prop-types';
+import NavigationUtil from '../../../../navigator/NavigationUtil';
 import styles from './styles';
 
 export default class VideoItem extends Component {
   constructor(props) {
     super(props);
   }
+  static propTypes = {
+    item: PropTypes.object,
+  };
   onItemClick() {
-    console.log('89-0');
+    NavigationUtil.goPage('VideoDetail', {
+      id: '201',
+    });
   }
   render() {
     const {item} = this.props;
