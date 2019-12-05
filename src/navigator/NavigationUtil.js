@@ -25,6 +25,7 @@ export default class NavigationUtil {
    * @param navigation
    */
   static goBack(navigation) {
+    console.log('navigation');
     console.log(navigation);
     navigation.goBack();
   }

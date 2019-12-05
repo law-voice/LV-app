@@ -10,8 +10,8 @@ import {
 import WelcomePage from '../page/WelcomePage';
 import HomePage from '../page/HomePage';
 import NewsDetail from '../page/news/NewsDetail';
-import VideoDetail from '../page/lesson/VideoDetail';
-import TeacherDetail from '../page/lesson/TeacherDetail';
+import VideoDetail from '../page/lesson/videoDetail';
+import TeacherDetail from '../page/lesson/teacherDetail';
 import DocumentDetail from '../page/document/DocumentDetail';
 // import MineDetail from '../page/mine/MineDetail';
 
@@ -41,9 +41,9 @@ const MainNavigator = createStackNavigator(
     },
     VideoDetail: {
       screen: VideoDetail,
-      navigationOptions: ({navigation}) => ({
-        title: '视频',
-      }),
+      navigationOptions: {
+        header: null, // 可以通过将header设为null 来禁用StackNavigator的Navigation Bar
+      },
     },
     TeacherDetail: {
       screen: TeacherDetail,
@@ -60,7 +60,7 @@ const MainNavigator = createStackNavigator(
   },
   {
     defaultNavigationOptions: {
-      // header: null,// 可以通过将header设为null 来禁用StackNavigator的Navigation Bar
+      header: null, // 可以通过将header设为null 来禁用StackNavigator的Navigation Bar
     },
   },
 );
