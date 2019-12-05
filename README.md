@@ -28,3 +28,13 @@
     - [Mock 数据]
   - [权限控制]
   - [安全]
+
+## 技术栈
+
+## 安装前提/运行前提
+
+`node`、`Python2`、`JDK`、`Yarn`、`React Native 的命令行工具（react-native-cli）`、`Android Studio`、`Android SDK`、`配置 ANDROID_HOME 环境变量`
+
+## 项目命令
+
+### 启动项目
