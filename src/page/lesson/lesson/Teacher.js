@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
-import {View, Button, FlatList} from 'react-native';
+import {View, Text, Button, FlatList} from 'react-native';
 import {createAppContainer} from 'react-navigation';
 import {createMaterialTopTabNavigator} from 'react-navigation-tabs';
 import NavigationUtil from '../../../navigator/NavigationUtil';
 import TeacherItem from './components/TeacherItem';
+import globalStyles from '../../../style/globalStyles';
 import styles from './styles';
 
 export default class Teacher extends Component {
@@ -53,10 +54,11 @@ export default class Teacher extends Component {
         {
           tabBarOptions: {
             scrollEnabled: true,
-            pressColor: '#269CF3',
+            pressColor: globalStyles.defaultColor,
             pressOpacity: 0.6,
             tabStyle: {
               width: 'auto',
+              // padding: 0,
             },
             labelStyle: {
               color: '#333',
@@ -64,9 +66,9 @@ export default class Teacher extends Component {
             style: {
               backgroundColor: '#fff',
             },
-            // indicatorStyle: {
-            //   backgroundColor: '#269CF3',
-            // },
+            indicatorStyle: {
+              backgroundColor: globalStyles.defaultColor,
+            },
           },
         },
       ),
@@ -212,16 +214,8 @@ class TopTab extends Component {
   render() {
     const {tabLabel} = this.props;
     return (
-      <View style={{height: 200}}>
-        <Button
-          title="video bottom啊a"
-          onPress={() => {
-            NavigationUtil.goPage('lessonDetail', {
-              // navigation: this.props.navigation
-              tabLabel,
-            });
-          }}
-        />
+      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+        <Text>TeacherItem</Text>
       </View>
     );
   }

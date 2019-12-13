@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
 import {View, TouchableOpacity, Text} from 'react-native';
 import NavigationBar from '../../../component/common/NavigationBar';
+import NavigationUtil from '../../../navigator/NavigationUtil';
 import Video from './Video';
 import Teacher from './Teacher';
+import globalStyles from '../../../style/globalStyles';
 import styles from './styles';
 
 export default class LessonPage extends Component {
@@ -57,11 +59,27 @@ export default class LessonPage extends Component {
   }
   navBar() {
     let statusBar = {
-      backgroundColor: '#269CF3',
+      backgroundColor: globalStyles.defaultColor,
       barStyle: 'light-content',
     };
     return (
       <NavigationBar titleView={this.renderTitleView()} statusBar={statusBar} />
+    );
+  }
+  searchIcon() {
+    return (
+      <View style={styles.searchIconContainer}>
+        <TouchableOpacity
+          style={{flex: 1}}
+          underlayColor="transparent"
+          onPress={() => {
+            NavigationUtil.goPage('Search');
+          }}>
+          <View style={styles.searchIconBox}>
+            <Text style={styles.searchIcon}>&#xe62b;</Text>
+          </View>
+        </TouchableOpacity>
+      </View>
     );
   }
   render() {
@@ -69,6 +87,7 @@ export default class LessonPage extends Component {
       <View style={styles.container}>
         {this.navBar()}
         {this.state.type === 0 ? <Video /> : <Teacher />}
+        {this.searchIcon()}
       </View>
     );
   }

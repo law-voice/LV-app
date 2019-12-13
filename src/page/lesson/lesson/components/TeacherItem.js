@@ -28,7 +28,12 @@ export default class TeacherItem extends Component {
           <View style={{flexDirection: 'row'}}>
             <View style={{width: 80, paddingTop: 7, paddingBottom: 5}}>
               <Image
-                style={{width: 80, height: 80, borderRadius: 80, marginTop: 5}}
+                style={{
+                  width: 80,
+                  height: 80,
+                  borderRadius: 50,
+                  marginTop: 5,
+                }}
                 source={require('../../../../assets/teacher_3.png')}
               />
             </View>

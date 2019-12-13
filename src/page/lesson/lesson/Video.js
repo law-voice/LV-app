@@ -4,6 +4,7 @@ import {createAppContainer} from 'react-navigation';
 import {createMaterialTopTabNavigator} from 'react-navigation-tabs';
 import NavigationUtil from '../../../navigator/NavigationUtil';
 import VideoItem from './components/VideoItem';
+import globalStyles from '../../../style/globalStyles';
 import styles from './styles';
 
 export default class Video extends Component {
@@ -53,7 +54,7 @@ export default class Video extends Component {
         {
           tabBarOptions: {
             scrollEnabled: true,
-            pressColor: '#269CF3',
+            pressColor: globalStyles.defaultColor,
             pressOpacity: 0.6,
             tabStyle: {
               width: 'auto',
@@ -64,9 +65,9 @@ export default class Video extends Component {
             style: {
               backgroundColor: '#fff',
             },
-            // indicatorStyle: {
-            //   backgroundColor: '#269CF3',
-            // },
+            indicatorStyle: {
+              backgroundColor: globalStyles.defaultColor,
+            },
           },
         },
       ),
