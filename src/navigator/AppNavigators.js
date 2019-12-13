@@ -9,6 +9,7 @@ import {
 
 import WelcomePage from '../page/WelcomePage';
 import HomePage from '../page/HomePage';
+import search from '../page/search';
 import NewsDetail from '../page/news/NewsDetail';
 import VideoDetail from '../page/lesson/videoDetail';
 import TeacherDetail from '../page/lesson/teacherDetail';
@@ -32,6 +33,12 @@ const MainNavigator = createStackNavigator(
       navigationOptions: {
         header: null, // 可以通过将header设为null 来禁用StackNavigator的Navigation Bar
       },
+    },
+    Search: {
+      screen: search,
+      navigationOptions: ({navigation}) => ({
+        title: '搜索',
+      }),
     },
     NewsDetail: {
       screen: NewsDetail,
