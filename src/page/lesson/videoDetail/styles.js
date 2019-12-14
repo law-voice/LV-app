@@ -1,6 +1,12 @@
 import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
+  detailTitle: {
+    fontSize: 18,
+    color: '#fff',
+    textAlign: 'center',
+    position: 'relative',
+  },
   backgroundVideo: {
     position: 'absolute',
     top: 0,

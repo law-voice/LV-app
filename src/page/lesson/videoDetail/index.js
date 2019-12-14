@@ -1,14 +1,14 @@
 import React, {Component} from 'react';
-import {View, Text, Button, Image, Alert, Dimensions} from 'react-native';
+import {View, Text, Image, Alert, Dimensions, FlatList} from 'react-native';
 import Video from 'react-native-video';
 import {createAppContainer} from 'react-navigation';
 import {createMaterialTopTabNavigator} from 'react-navigation-tabs';
-import NavigationBar from '../../../component/common/NavigationBar';
-import NavigationUtil from '../../../navigator/NavigationUtil';
-import QuestionItem from './components/questionItem';
-import globalStyles from '../../../style/globalStyles';
+import NavigationBar from '@/component/common/NavigationBar';
+import ListLine from '@/component/common/ListLine';
+import NavigationUtil from '@/navigator/NavigationUtil';
+import QuestionItem from './components/QuestionItem';
+import globalStyles from '@/style/globalStyles';
 import styles from './styles';
-// import {relative} from 'path';
 
 const screenWidth = Dimensions.get('window').width;
 
@@ -61,15 +61,7 @@ export default class VideoDetail extends Component {
   renderTitleView() {
     return (
       <View>
-        <Text
-          style={{
-            fontSize: 18,
-            color: '#fff',
-            textAlign: 'center',
-            position: 'relative',
-          }}>
-          视频详情
-        </Text>
+        <Text style={styles.detailTitle}>视频详情</Text>
       </View>
     );
   }
@@ -228,14 +220,74 @@ class AuthorInfo extends Component {
 }
 
 class Question extends Component {
-  state = {};
+  state = {
+    data: [
+      {
+        avatar: '../../../../assets/teacher_3.png',
+        userName: '王律师',
+        time: '2019-01-02',
+        question: '什么是网络暴力？',
+        answer:
+          '网络暴力是指：人在没有监督的时候，肆意挥洒自己的恶意，这恶意聚沙成塔，足以摧毁人的信仰。',
+        count: 122,
+      },
+      {
+        avatar: '../../../../assets/teacher_3.png',
+        userName: '王律师',
+        time: '2019-01-02',
+        question: '什么是网络暴力？',
+        answer:
+          '网络暴力是指：人在没有监督的时候，肆意挥洒自己的恶意，这恶意聚沙成塔，足以摧毁人的信仰。',
+        count: 122,
+      },
+      {
+        avatar: '../../../../assets/teacher_3.png',
+        userName: '王律师',
+        time: '2019-01-02',
+        question: '什么是网络暴力？',
+        answer:
+          '网络暴力是指：人在没有监督的时候，肆意挥洒自己的恶意，这恶意聚沙成塔，足以摧毁人的信仰。',
+        count: 122,
+      },
+      {
+        avatar: '../../../../assets/teacher_3.png',
+        userName: '王律师',
+        time: '2019-01-02',
+        question: '什么是网络暴力？',
+        answer:
+          '网络暴力是指：人在没有监督的时候，肆意挥洒自己的恶意，这恶意聚沙成塔，足以摧毁人的信仰。',
+        count: 122,
+      },
+      {
+        avatar: '../../../../assets/teacher_3.png',
+        userName: '王律师',
+        time: '2019-01-02',
+        question: '什么是网络暴力？',
+        answer:
+          '网络暴力是指：人在没有监督的时候，肆意挥洒自己的恶意，这恶意聚沙成塔，足以摧毁人的信仰。',
+        count: 122,
+      },
+    ],
+  };
+  renderItem = data => {
+    return <QuestionItem item={data.item} />;
+  };
+  renderListLine = () => {
+    const lineStyle = {
+      borderWidth: 0.5,
+      borderColor: '#eee',
+    };
+    return <ListLine lineStyle={lineStyle} />;
+  };
   render() {
     return (
-      <View>
-        <QuestionItem />
-        <QuestionItem />
-        <QuestionItem />
-        <QuestionItem />
+      <View style={{flex: 1}}>
+        <FlatList
+          data={this.state.data}
+          renderItem={this.renderItem}
+          keyExtractor={(item, index) => '' + index}
+          ItemSeparatorComponent={this.renderListLine}
+        />
       </View>
     );
   }

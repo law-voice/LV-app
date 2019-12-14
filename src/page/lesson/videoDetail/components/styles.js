@@ -2,8 +2,6 @@ import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
   questionBox: {
-    borderWidth: 0.5,
-    borderColor: '#eee',
     paddingHorizontal: 10,
     paddingVertical: 15,
   },
@@ -38,6 +36,8 @@ export default StyleSheet.create({
     fontFamily: 'iconfont',
     fontSize: 18,
     marginRight: 5,
+    position: 'relative',
+    top: 1,
   },
   // main 部分
   mainBox: {
