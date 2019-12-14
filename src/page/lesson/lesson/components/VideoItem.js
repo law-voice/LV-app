@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Image, Text, TouchableOpacity, View} from 'react-native';
 import {PropTypes} from 'prop-types';
-import NavigationUtil from '../../../../navigator/NavigationUtil';
+import NavigationUtil from '@/navigator/NavigationUtil';
 import styles from './styles';
 
 export default class VideoItem extends Component {

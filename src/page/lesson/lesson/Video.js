@@ -2,9 +2,9 @@ import React, {Component} from 'react';
 import {View, Button, FlatList} from 'react-native';
 import {createAppContainer} from 'react-navigation';
 import {createMaterialTopTabNavigator} from 'react-navigation-tabs';
-import NavigationUtil from '../../../navigator/NavigationUtil';
+import NavigationUtil from '@/navigator/NavigationUtil';
 import VideoItem from './components/VideoItem';
-import globalStyles from '../../../style/globalStyles';
+import globalStyles from '@/style/globalStyles';
 import styles from './styles';
 
 export default class Video extends Component {

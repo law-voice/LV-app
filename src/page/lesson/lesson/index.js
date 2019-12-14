@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
 import {View, TouchableOpacity, Text} from 'react-native';
-import NavigationBar from '../../../component/common/NavigationBar';
-import NavigationUtil from '../../../navigator/NavigationUtil';
+import NavigationBar from '@/component/common/NavigationBar';
+import NavigationUtil from '@/navigator/NavigationUtil';
 import Video from './Video';
 import Teacher from './Teacher';
-import globalStyles from '../../../style/globalStyles';
+import globalStyles from '@/style/globalStyles';
 import styles from './styles';
 
 export default class LessonPage extends Component {
