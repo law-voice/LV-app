@@ -21,6 +21,9 @@ export default class VideoDetail extends Component {
   //     title: navigation.getParam('otherParam', 'A Nested Details Screen'),
   //   };
   // };
+  static navigationOptions = {
+    gesturesEnabled: true,
+  };
 
   constructor(props) {
     super(props);

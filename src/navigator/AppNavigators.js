@@ -9,80 +9,42 @@ import {
 
 import WelcomePage from '../page/WelcomePage';
 import HomePage from '../page/HomePage';
-import search from '../page/search';
-import NewsDetail from '../page/news/NewsDetail';
-import VideoDetail from '../page/lesson/videoDetail';
-import TeacherDetail from '../page/lesson/teacherDetail';
-import DocumentDetail from '../page/document/DocumentDetail';
-// import MineDetail from '../page/mine/MineDetail';
 
-export const rootCom = 'Main'; //设置根路由
+import SecondaryPages from './SecondaryPages';
 
-const InitNavigator = createStackNavigator({
-  WelcomePage: {
-    screen: WelcomePage,
-    navigationOptions: {
-      header: null, // 可以通过将header设为null 来禁用StackNavigator的Navigation Bar
+export const rootRouteName = 'Init'; //设置根路由
+
+const InitNavigator = createStackNavigator(
+  {
+    WelcomePage,
+  },
+  {
+    defaultNavigationOptions: {
+      header: null,
     },
   },
-});
+);
 const MainNavigator = createStackNavigator(
   {
     HomePage: {
       screen: HomePage,
       navigationOptions: {
-        header: null, // 可以通过将header设为null 来禁用StackNavigator的Navigation Bar
+        header: null,
       },
     },
-    Search: {
-      screen: search,
-      navigationOptions: ({navigation}) => ({
-        title: '搜索',
-      }),
-    },
-    NewsDetail: {
-      screen: NewsDetail,
-      navigationOptions: ({navigation}) => ({
-        title: '新闻详情',
-      }),
-    },
-    VideoDetail: {
-      screen: VideoDetail,
-      navigationOptions: {
-        header: null, // 可以通过将header设为null 来禁用StackNavigator的Navigation Bar
-      },
-    },
-    TeacherDetail: {
-      screen: TeacherDetail,
-      navigationOptions: ({navigation}) => ({
-        title: '名师',
-      }),
-    },
-    DocumentDetail: {
-      screen: DocumentDetail,
-      navigationOptions: ({navigation}) => ({
-        title: '文献',
-      }),
-    },
+    ...SecondaryPages,
   },
   {
     defaultNavigationOptions: {
-      header: null, // 可以通过将header设为null 来禁用StackNavigator的Navigation Bar
+      // header: null,
+      // gesturesEnabled: true,
     },
   },
 );
-const SwitchNavigator = createSwitchNavigator(
-  {
-    Init: InitNavigator,
-    Main: MainNavigator,
-  },
-  {
-    navigationOptions: {
-      header: null, // 可以通过将header设为null 来禁用StackNavigator的Navigation Bar
-    },
-  },
-);
-// export default SwitchNavigator
+const SwitchNavigator = createSwitchNavigator({
+  Init: InitNavigator,
+  Main: MainNavigator,
+});
 
 export const RootNavigator = createAppContainer(SwitchNavigator);
 

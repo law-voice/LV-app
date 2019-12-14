@@ -1,33 +1,28 @@
 import React, {Component} from 'react';
-import {Text} from 'react-native';
-import {connect} from 'react-redux';
-
-import NavigationUtil from '../navigator/NavigationUtil';
-// import SplashScreen from 'react-native-splash-screen'
-// import actions from "../action";
-// import {connect} from "react-redux";
+import {Text, View, Button} from 'react-native';
 
 class WelcomePage extends Component {
   componentDidMount() {
-    // this.props.onThemeInit();
-    // this.timer = setTimeout(() => {
-    // SplashScreen.hide();
-    console.log('yesx');
-    console.log(this.props);
-    NavigationUtil.resetToHomPage({
-      navigation: this.props.navigation,
-    });
-    // this.props.navigation.navigate("Main");
-    // }, 300);
+    // Alert.alert('欢迎来到法心app');
   }
 
-  componentWillUnmount() {
-    this.timer && clearTimeout(this.timer);
-  }
+  jumpToApp = () => {
+    this.props.navigation.navigate('Main');
+  };
 
   render() {
-    console.log('666');
-    return <Text>Welcome</Text>;
+    return (
+      <View
+        style={{
+          flex: 1,
+          justifyContent: 'center',
+          alignItems: 'center',
+          backgroundColor: '#0ebaff',
+        }}>
+        <Text style={{fontSize: 28, color: '#fff'}}>Welcome to 法心</Text>
+        <Button onPress={this.jumpToApp} title="进入主页面" />
+      </View>
+    );
   }
 }
 export default WelcomePage;

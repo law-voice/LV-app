@@ -3,11 +3,11 @@ import news from './news';
 import lesson from './lesson/lesson';
 import video from './lesson/video';
 
-import {rootCom, RootNavigator} from '../../navigator/AppNavigators';
+import {rootRouteName, RootNavigator} from '../../navigator/AppNavigators';
 
 //1.指定默认state
 const navState = RootNavigator.router.getStateForAction(
-  RootNavigator.router.getActionForPathAndParams(rootCom),
+  RootNavigator.router.getActionForPathAndParams(rootRouteName),
 );
 
 /**
