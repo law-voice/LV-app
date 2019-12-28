@@ -116,13 +116,9 @@ export default class VideoDetail extends Component {
         },
         {
           tabBarOptions: {
-            scrollEnabled: true,
             upperCaseLabel: false, //是否使标签大写，默认为true
             pressColor: globalStyles.defaultColor,
             pressOpacity: 0.6,
-            // tabStyle: {
-            //   width: 'auto',
-            // },
             labelStyle: {
               color: '#333',
             },

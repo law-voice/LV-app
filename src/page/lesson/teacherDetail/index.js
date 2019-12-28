@@ -8,14 +8,6 @@ import globalStyles from '@/style/globalStyles';
 import styles from './styles';
 
 export default class TeacherDetail extends Component {
-  static navigationOptions = {
-    title: '视频详情',
-  };
-  // static navigationOptions = ({ navigation }) => {
-  //   return {
-  //     title: navigation.getParam('otherParam', 'A Nested Details Screen'),
-  //   };
-  // };
   state = {
     detailInfo: {
       avatar: '../../../../assets/teacher_3.png',
@@ -75,14 +67,6 @@ export default class TeacherDetail extends Component {
       },
     ],
   };
-  toMinePage() {
-    // this.props.navigation.setParams({ homeName: '新首页' })
-    // this.props.navigation.push('Mine', {
-    //   itemId: 86,
-    //   otherParam: 'anything you want here',
-    //   homeName: '新首页'
-    // })
-  }
   renderLeftButton() {
     return (
       <Text
@@ -184,11 +168,11 @@ export default class TeacherDetail extends Component {
             </View>
           </View>
           {/* <View style={styles.listBox}></View> */}
-          <TabList
+          {/* <TabList
             scrollData={this.state.scrollData}
             ListItem={ListItem}
             ListData={this.state.ListData}
-          />
+          /> */}
         </ScrollView>
       </View>
     );

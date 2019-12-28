@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import globalStyles from '../../../style/globalStyles';
+import globalStyles from '@/style/globalStyles';
 
 export default StyleSheet.create({
   pageContainer: {
