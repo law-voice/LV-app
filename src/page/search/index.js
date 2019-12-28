@@ -9,6 +9,7 @@ export default class SearchPage extends Component {
   render() {
     return (
       <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+        {this.navBar()}
         <Text>搜索 Screen</Text>
         <Button
           title="返回"
