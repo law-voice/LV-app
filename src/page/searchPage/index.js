@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {View, Text, Button} from 'react-native';
-import NavigationUtil from '../../navigator/NavigationUtil';
+import NavigationUtil from '@/navigator/NavigationUtil';
+import styles from './styles';
 
 export default class SearchPage extends Component {
   static navigationOptions = {
@@ -8,7 +9,7 @@ export default class SearchPage extends Component {
   };
   render() {
     return (
-      <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+      <View style={styles.container}>
         {this.navBar()}
         <Text>搜索 Screen</Text>
         <Button

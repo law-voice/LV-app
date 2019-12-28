@@ -1,4 +1,4 @@
-import Search from '../page/search';
+import Search from '../page/searchPage';
 import NewsDetail from '../page/news/NewsDetail';
 import VideoDetail from '../page/lesson/videoDetail';
 import TeacherDetail from '../page/lesson/teacherDetail';
