@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import {Text, View, Button} from 'react-native';
+import NavigationBar from '@/component/common/NavigationBar';
+import globalStyles from '@/style/globalStyles';
 
 class WelcomePage extends Component {
   componentDidMount() {
@@ -8,6 +10,13 @@ class WelcomePage extends Component {
 
   jumpToApp = () => {
     this.props.navigation.navigate('Main');
+  };
+
+  navBar = () => {
+    let statusBar = {
+      backgroundColor: globalStyles.defaultColor,
+    };
+    return <NavigationBar statusBar={statusBar} />;
   };
 
   render() {
@@ -19,6 +28,7 @@ class WelcomePage extends Component {
           alignItems: 'center',
           backgroundColor: '#0ebaff',
         }}>
+        {this.navBar()}
         <Text style={{fontSize: 28, color: '#fff'}}>Welcome to 法心</Text>
         <Button onPress={this.jumpToApp} title="进入主页面" />
       </View>

@@ -5,8 +5,8 @@ import {Text} from 'react-native';
 
 import NewsPage from './news/List';
 import LessonPage from './lesson/lesson';
-import DocumentPage from './document/DocumentPage';
-import MinePage from './mine/MinePage';
+import DocumentPage from './document/Document';
+import MinePage from './mine/Mine';
 import NavigationUtil from '../navigator/NavigationUtil';
 
 const NewsPageName = 'NewsPage';

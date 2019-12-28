@@ -1,8 +1,9 @@
-import Search from '../page/Search';
+import Search from '../page/search';
 import NewsDetail from '../page/news/NewsDetail';
 import VideoDetail from '../page/lesson/videoDetail';
 import TeacherDetail from '../page/lesson/teacherDetail';
-import DocumentDetail from '../page/document/DocumentDetail';
+import DocumentList from '../page/document/List';
+import Base from '../page/mine/Base';
 
 export default {
   Search: {
@@ -20,19 +21,26 @@ export default {
   VideoDetail: {
     screen: VideoDetail,
     navigationOptions: {
-      title: '视频',
+      header: null,
     },
   },
   TeacherDetail: {
     screen: TeacherDetail,
     navigationOptions: {
-      title: '名师',
+      header: null,
     },
   },
-  DocumentDetail: {
-    screen: DocumentDetail,
+  DocumentList: {
+    screen: DocumentList,
     navigationOptions: {
-      title: '文献',
+      header: null,
+      // title: '文献',
+    },
+  },
+  Base: {
+    screen: Base,
+    navigationOptions: {
+      header: null,
     },
   },
 };

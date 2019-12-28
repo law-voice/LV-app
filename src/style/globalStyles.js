@@ -13,4 +13,12 @@ export default {
   },
   defaultColor: '#269CF3',
   defaultBgColor: '#f4f5f6',
+  borT: {
+    borderTopWidth: 0.5,
+    borderTopColor: '#eee',
+  },
+  borB: {
+    borderBottomWidth: 0.5,
+    borderBottomColor: '#eee',
+  },
 };
